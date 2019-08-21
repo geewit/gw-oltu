@@ -5,7 +5,6 @@ import io.geewit.oltu.oauth2.common.OAuth;
 import io.geewit.oltu.oauth2.common.error.OAuthError;
 import io.geewit.oltu.oauth2.common.exception.OAuthSystemException;
 import io.geewit.oltu.oauth2.common.parameters.*;
-import org.apache.oltu.oauth2.common.parameters.*;
 
 import java.util.HashMap;
 import java.util.Map;
