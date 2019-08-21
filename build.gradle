@@ -1,0 +1,57 @@
+apply from: "https://gitee.com/geewit/gradle_publish_sonatype/raw/master/sub_publish_signing.gradle"
+
+task publish {
+    doFirst {
+        println 'run publish start'
+    }
+    doLast {
+        println 'run publish complete'
+    }
+}
+
+publish.dependsOn(":commons:json:publish")
+publish.dependsOn(":commons:token:publish")
+publish.dependsOn(":jose:jwe:publish")
+publish.dependsOn(":jose:jws:publish")
+publish.dependsOn(":oauth2:authz-server:publish")
+publish.dependsOn(":oauth2:client:publish")
+publish.dependsOn(":oauth2:common:publish")
+publish.dependsOn(":oauth2:dynamic-reg-client:publish")
+publish.dependsOn(":oauth2:dynamic-reg-common:publish")
+publish.dependsOn(":oauth2:dynamic-reg-server:publish")
+publish.dependsOn(":oauth2:httpclient:publish")
+publish.dependsOn(":oauth2:integration-test:publish")
+publish.dependsOn(":oauth2:jwt:publish")
+publish.dependsOn(":oauth2:resource-server:publish")
+publish.dependsOn(":oauth2:resource-server-filter:publish")
+publish.dependsOn(":oauth2:test-utils:publish")
+publish.dependsOn(":oidc:publish")
+
+task clean {
+    doFirst {
+        println 'run clean start'
+    }
+    doLast {
+        println 'run clean complete'
+    }
+}
+
+clean.dependsOn(":commons:json:clean")
+clean.dependsOn(":commons:token:clean")
+clean.dependsOn(":jose:jwe:clean")
+clean.dependsOn(":jose:jws:clean")
+clean.dependsOn(":oauth2:authz-server:clean")
+clean.dependsOn(":oauth2:client:clean")
+clean.dependsOn(":oauth2:common:clean")
+clean.dependsOn(":oauth2:dynamic-reg-client:clean")
+clean.dependsOn(":oauth2:dynamic-reg-common:clean")
+clean.dependsOn(":oauth2:dynamic-reg-server:clean")
+clean.dependsOn(":oauth2:httpclient:clean")
+clean.dependsOn(":oauth2:integration-test:clean")
+clean.dependsOn(":oauth2:jwt:clean")
+clean.dependsOn(":oauth2:resource-server:clean")
+clean.dependsOn(":oauth2:resource-server-filter:clean")
+clean.dependsOn(":oauth2:test-utils:clean")
+clean.dependsOn(":oidc:clean")
+
+

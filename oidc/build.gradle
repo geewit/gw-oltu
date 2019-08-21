@@ -1,0 +1,13 @@
+project(":oidc") {
+    description = "Oltu - OpenId Connect"
+    dependencies {
+        compile project(":oauth2:common")
+        compile project(":oauth2:client")
+        compile project(":oauth2:jwt")
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+
+        testCompile("junit:junit:$junit_version")
+        testCompile("junit-addons:junit-addons:$junit_addons_version")
+    }
+}
+

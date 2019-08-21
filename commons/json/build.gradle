@@ -1,0 +1,9 @@
+project(":commons:json") {
+    description = "Oltu JSON shared utility"
+    dependencies {
+        compile("org.slf4j:slf4j-api:$slf4j_version") {
+            exclude group: 'org.slf4j', module: 'logback'
+        }
+        compile("javax.json:javax.json-api:$javax_json_api_version")
+    }
+}

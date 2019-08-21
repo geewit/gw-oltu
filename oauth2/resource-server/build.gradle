@@ -1,0 +1,18 @@
+project(":oauth2:resource-server") {
+
+    dependencies {
+        compile(project(":oauth2:authz-server"))
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+        testCompile("junit:junit:$junit_version")
+        testCompile("org.easymock:easymock:$easymock_version")
+        testCompileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+    }
+}
+
+
+
+
+
+
+
+

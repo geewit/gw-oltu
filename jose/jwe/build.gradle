@@ -1,0 +1,12 @@
+project(":jose:jwe") {
+    description = "JWE specification implemented in Oltu"
+    dependencies {
+        compile(project(":commons:json"))
+        compile(project(":commons:token"))
+        compile("org.slf4j:slf4j-api:$slf4j_version") {
+            exclude group: 'org.slf4j', module: 'logback'
+        }
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+        testCompile("junit:junit:$junit_version")
+    }
+}

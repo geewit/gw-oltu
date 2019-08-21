@@ -1,0 +1,18 @@
+project(":oauth2:httpclient") {
+
+    dependencies {
+        compile(project(":oauth2:client"))
+//		compile("io.geewit.security.core:gw-security-core:$version")
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+        compile("org.apache.commons:commons-collections4:$commons_collections4_version")
+        compile("org.apache.httpcomponents:httpclient:$httpclient_version")
+    }
+}
+
+
+
+
+
+
+
+

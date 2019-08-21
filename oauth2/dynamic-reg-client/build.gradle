@@ -1,0 +1,16 @@
+project(":oauth2:dynamic-reg-client") {
+    description = "Oltu - OAuth 2.0 - Dynamic Registration Client"
+    dependencies {
+        compile(project(":oauth2:common"))
+        compile(project(":oauth2:client"))
+        compile(project(":oauth2:dynamic-reg-common"))
+    }
+}
+
+
+
+
+
+
+
+

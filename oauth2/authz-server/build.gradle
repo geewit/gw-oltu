@@ -1,0 +1,25 @@
+project(":oauth2:authz-server") {
+    description = "OAuth 2.0 - Authorization Server"
+    dependencies {
+        compile(project(":oauth2:common"))
+        compile("org.slf4j:slf4j-api:$slf4j_version") {
+            exclude group: 'org.slf4j', module: 'logback'
+        }
+        compile("org.apache.johnzon:johnzon-core:$johnzon_version")
+        compile("io.geewit.utils.core:gw-core-uuid-utils:$gw_utils_version")
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+        testCompile("junit:junit:$junit_version")
+        testCompile("org.apache.cxf:cxf-rt-frontend-jaxrs:$cxf_version")
+        testCompile("org.apache.cxf:cxf-testutils:$cxf_version")
+        testCompile("org.easymock:easymock:$easymock_version")
+        testCompileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+    }
+}
+
+
+
+
+
+
+
+

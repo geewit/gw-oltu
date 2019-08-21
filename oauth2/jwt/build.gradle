@@ -1,0 +1,19 @@
+project(":oauth2:jwt") {
+
+    dependencies {
+        compile(project(":commons:json"))
+        compile(project(":commons:token"))
+        compile(project(":oauth2:authz-server"))
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+
+        testCompile("junit:junit:$junit_version")
+    }
+}
+
+
+
+
+
+
+
+

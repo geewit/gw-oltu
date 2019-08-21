@@ -1,0 +1,23 @@
+project(":oauth2:client") {
+    description = "Oltu - OAuth 2.0 - Client"
+    dependencies {
+        compile(project(":oauth2:common"))
+        compile("org.slf4j:slf4j-api:$slf4j_version") {
+            exclude group: 'org.slf4j', module: 'logback'
+        }
+        compile("org.apache.johnzon:johnzon-core:$johnzon_version")
+        compileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+        testCompile("junit:junit:$junit_version")
+        testCompile("commons-io:commons-io:$commons_io_version")
+        testCompile("org.easymock:easymock:$easymock_version")
+        testCompileOnly("javax.servlet:javax.servlet-api:$javax_servlet_api_version")
+    }
+}
+
+
+
+
+
+
+
+
