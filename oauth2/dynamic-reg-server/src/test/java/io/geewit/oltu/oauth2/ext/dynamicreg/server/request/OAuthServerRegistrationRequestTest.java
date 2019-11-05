@@ -26,6 +26,8 @@ import io.geewit.oltu.oauth2.utils.test.FileUtils;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 
+import java.nio.charset.StandardCharsets;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -39,7 +41,7 @@ public class OAuthServerRegistrationRequestTest {
 
         MockHttpServletRequest request = new MockHttpServletRequest("POST", "/oauth/register");
         request.setContentType(OAuth.ContentType.JSON);
-        request.setContent(validJson.getBytes("UTF-8"));
+        request.setContent(validJson.getBytes(StandardCharsets.UTF_8));
 
         final JSONHttpServletRequestWrapper jsonWrapper = new JSONHttpServletRequestWrapper(request);
         OAuthServerRegistrationRequest registrationRequest = new OAuthServerRegistrationRequest(jsonWrapper);
@@ -76,7 +78,7 @@ public class OAuthServerRegistrationRequestTest {
         final String inValidJson = FileUtils.readTextFileAsString("json/push_invalid.json");
         MockHttpServletRequest request = new MockHttpServletRequest("POST", "/oauth/register");
         request.setContentType(OAuth.ContentType.JSON);
-        request.setContent(inValidJson.getBytes("UTF-8"));
+        request.setContent(inValidJson.getBytes(StandardCharsets.UTF_8));
 
         final JSONHttpServletRequestWrapper jsonWrapper = new JSONHttpServletRequestWrapper(request);
         OAuthServerRegistrationRequest registrationRequest = new OAuthServerRegistrationRequest(jsonWrapper);

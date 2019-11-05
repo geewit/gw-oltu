@@ -12,7 +12,7 @@ public interface OAuth {
 
     String OAUTH_RESPONSE_TYPE = "response_type";
     String OAUTH_CLIENT_ID = "client_id";
-    String OAUTH_CLIENT_SECRET = "client_secret";
+    String OAUTH_CLIENT_SECRET = "secret";
     String OAUTH_REDIRECT_URI = "redirect_uri";
     String OAUTH_USERNAME = "username";
     String OAUTH_PASSWORD = "password";

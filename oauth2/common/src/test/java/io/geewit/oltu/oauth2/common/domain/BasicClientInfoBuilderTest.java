@@ -31,7 +31,7 @@ import org.junit.Test;
 public class BasicClientInfoBuilderTest {
 
     public static final String CLIENT_ID = "client_id";
-    public static final String CLIENT_SECRET = "client_secret";
+    public static final String CLIENT_SECRET = "secret";
     public static final String REDIRECT_URI = "redirect_uri";
     public static final String NAME = "name";
     public static final String ICON_URI = "icon_uri";

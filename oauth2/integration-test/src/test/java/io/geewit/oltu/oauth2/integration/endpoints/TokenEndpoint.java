@@ -53,7 +53,7 @@ public class TokenEndpoint {
                 return Response.status(response.getResponseStatus()).entity(response.getBody()).build();
             }
 
-            // check if client_secret is valid
+            // check if secret is valid
             if (!Common.CLIENT_SECRET.equals(oauthRequest.getClientSecret())) {
                 OAuthResponse response =
                         OAuthASResponse.errorResponse(HttpServletResponse.SC_UNAUTHORIZED)

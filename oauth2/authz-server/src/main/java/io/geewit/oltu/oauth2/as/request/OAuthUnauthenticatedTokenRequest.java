@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * The Unauthenticated OAuth Authorization Server class that validates whether a given HttpServletRequest is a valid
  * OAuth Token request.
- * This class accepts requests that are NOT authenticated, that is requests that do not contain a client_secret.
+ * This class accepts requests that are NOT authenticated, that is requests that do not contain a secret.
  * IMPORTANT: The ClientCredentials Grant Type is NOT supported by this class since client authentication is required
  * for this grant type. In order to support the client credentials grant type please use the {@link OAuthTokenRequest}
  * class.

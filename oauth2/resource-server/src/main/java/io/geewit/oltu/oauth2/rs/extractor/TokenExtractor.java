@@ -4,8 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- *
- *
  */
 public interface TokenExtractor {
 

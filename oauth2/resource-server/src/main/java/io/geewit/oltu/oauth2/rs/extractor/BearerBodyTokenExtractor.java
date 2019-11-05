@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- *
- *
  */
 public class BearerBodyTokenExtractor implements TokenExtractor {
 

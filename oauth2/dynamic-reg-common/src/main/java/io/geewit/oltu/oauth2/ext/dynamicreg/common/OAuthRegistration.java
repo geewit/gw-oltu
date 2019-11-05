@@ -20,7 +20,7 @@ public interface OAuthRegistration {
 
     interface Response {
         String CLIENT_ID = "client_id";
-        String CLIENT_SECRET = "client_secret";
+        String CLIENT_SECRET = "secret";
         String ISSUED_AT = "issued_at";
         String EXPIRES_IN = "expires_in";
     }
