@@ -3,7 +3,7 @@ package io.geewit.oltu.oauth2.common.message.types;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.geewit.core.jackson.databind.serializer.EnumNameSerializer;
-import io.geewit.core.utils.lang.enums.Name;
+import io.geewit.core.utils.enums.Name;
 import io.geewit.oltu.oauth2.common.jackson.deserializer.GrantTypeDeserializer;
 
 /**
