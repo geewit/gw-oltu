@@ -56,11 +56,10 @@ public abstract class OAuthClientResponse {
      * Allows setting the response body to an InputStream value.
      *
      * @param body An InputStream representing the response body.
-     * @throws OAuthProblemException exception
      * @throws UnsupportedOperationException for subclasses that only
      *         support String as body
      */
-    protected void setBody(InputStream body) throws OAuthProblemException {
+    protected void setBody(InputStream body) {
         throw new UnsupportedOperationException();
     }
 

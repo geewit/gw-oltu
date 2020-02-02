@@ -20,7 +20,7 @@ public class QueryParameterApplier implements OAuthParametersApplier {
             boolean containsQuestionMark = messageUrl.contains("?");
             StringBuilder url = new StringBuilder(messageUrl);
 
-            StringBuffer query = new StringBuffer(OAuthUtils.format(params.entrySet(), StandardCharsets.UTF_8.name()));
+            StringBuilder query = new StringBuilder(OAuthUtils.format(params.entrySet(), StandardCharsets.UTF_8.name()));
 
             if (!OAuthUtils.isEmpty(query.toString())) {
                 if (containsQuestionMark) {

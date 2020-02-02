@@ -84,7 +84,7 @@ public class JWS {
         if (rawString == null) {
             return method.verify(signature, TokenDecoder.base64Encode(new JWSHeaderWriter().write(header)), TokenDecoder.base64Encode(payload), verifyingKey);
         } else {
-            String jwt[] = rawString.split("\\.");
+            String[] jwt = rawString.split("\\.");
             return method.verify(jwt[2], jwt[0], jwt[1], verifyingKey);
         }
     }

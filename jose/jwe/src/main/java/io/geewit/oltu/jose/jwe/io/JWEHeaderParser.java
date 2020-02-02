@@ -3,6 +3,8 @@ package io.geewit.oltu.jose.jwe.io;
 import io.geewit.oltu.commons.json.CustomizableEntityReader;
 import io.geewit.oltu.jose.jwe.JWE;
 
+import java.util.Arrays;
+
 final class JWEHeaderParser extends CustomizableEntityReader<JWE, JWE.Builder> implements JWEConstants {
 
     public JWEHeaderParser(JWE.Builder builder) {
@@ -50,9 +52,7 @@ final class JWEHeaderParser extends CustomizableEntityReader<JWE, JWE.Builder> i
             case CRITICAL:
                 Object[] criticalValues = (Object[]) value;
                 String[] critical = new String[criticalValues.length];
-                for (int i = 0; i < critical.length; i++) {
-                    critical[i] = String.valueOf(criticalValues[i]);
-                }
+                Arrays.setAll(critical, i -> String.valueOf(criticalValues[i]));
                 getBuilder().setCritical(critical);
                 break;
             default:

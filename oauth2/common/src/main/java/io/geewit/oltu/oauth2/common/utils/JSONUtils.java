@@ -61,9 +61,7 @@ public final class JSONUtils {
                     generator.writeStartArray(key);
 
                     Collection<?> collection = (Collection<?>) value;
-                    for (Object item : collection) {
-                        witeItem(generator, item);
-                    }
+                    collection.forEach(item -> witeItem(generator, item));
 
                     generator.writeEnd();
                 }

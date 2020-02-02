@@ -1,10 +1,10 @@
 package io.geewit.oltu.oauth2.common.utils;
 
+import io.geewit.oltu.oauth2.common.OAuth;
+import io.geewit.oltu.oauth2.common.error.OAuthError;
 import io.geewit.oltu.oauth2.common.exception.OAuthProblemException;
 import io.geewit.oltu.oauth2.common.exception.OAuthSystemException;
 import org.apache.commons.codec.binary.Base64;
-import io.geewit.oltu.oauth2.common.OAuth;
-import io.geewit.oltu.oauth2.common.error.OAuthError;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
@@ -17,12 +17,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * Common OAuth Utils class.
  * Some methods based on the Utils class from OAuth V1.0a library available at:
  * http://oauth.googlecode.com/svn/code/java/core/
- *
  */
 public final class OAuthUtils {
 
@@ -31,7 +31,7 @@ public final class OAuthUtils {
     private static final String PARAMETER_SEPARATOR = "&";
     private static final String NAME_VALUE_SEPARATOR = "=";
     private static final Pattern OAUTH_HEADER = Pattern.compile("\\s*(\\w*)\\s+(.*)");
-    private static final Pattern NVP = Pattern.compile("(\\S*)\\s*\\=\\s*\"([^\"]*)\"");
+    private static final Pattern NVP = Pattern.compile("(\\S*)\\s*=\\s*\"([^\"]*)\"");
 
     /**
      * Translates parameters into <code>application/x-www-form-urlencoded</code> String
@@ -136,13 +136,11 @@ public final class OAuthUtils {
      */
 
     public static OAuthProblemException handleMissingParameters(Set<String> missingParams) {
-        StringBuilder sb = new StringBuilder("Missing parameters: ");
+        String sb = "";
         if (!OAuthUtils.isEmpty(missingParams)) {
-            for (String missingParam : missingParams) {
-                sb.append(missingParam).append(" ");
-            }
+            sb = missingParams.stream().map(missingParam -> missingParam + " ").collect(Collectors.joining("", "Missing parameters: ", ""));
         }
-        return handleOAuthProblemException(sb.toString().trim());
+        return handleOAuthProblemException(sb.trim());
     }
 
     public static OAuthProblemException handleBadContentTypeException(String expectedContentType) {
@@ -152,13 +150,11 @@ public final class OAuthUtils {
 
     public static OAuthProblemException handleNotAllowedParametersOAuthException(
             List<String> notAllowedParams) {
-        StringBuilder sb = new StringBuilder("Not allowed parameters: ");
+        String sb = "";
         if (notAllowedParams != null) {
-            for (String notAllowed : notAllowedParams) {
-                sb.append(notAllowed).append(" ");
-            }
+            sb = notAllowedParams.stream().map(notAllowed -> notAllowed + " ").collect(Collectors.joining("", "Not allowed parameters: ", ""));
         }
-        return handleOAuthProblemException(sb.toString().trim());
+        return handleOAuthProblemException(sb.trim());
     }
 
     /**
@@ -411,11 +407,8 @@ public final class OAuthUtils {
     }
 
     public static String encodeScopes(Set<String> s) {
-        StringBuilder scopes = new StringBuilder();
-        for (String scope : s) {
-            scopes.append(scope).append(" ");
-        }
-        return scopes.toString().trim();
+        String scopes = s.stream().map(scope -> scope + " ").collect(Collectors.joining());
+        return scopes.trim();
 
     }
 
